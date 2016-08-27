@@ -1,3 +1,4 @@
+import { HeroService } from './../hero.service';
 import { Component, OnInit,OnChanges,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
@@ -5,7 +6,7 @@ import { Component, OnInit,OnChanges,Input,Output,EventEmitter } from '@angular/
   templateUrl: 'article.component.html',
   styleUrls: ['article.component.css']
 })
-export class ArticleComponent implements OnInit,OnChanges {
+export class ArticleComponent implements OnInit {
 
   @Input()
   item: any;
@@ -22,13 +23,11 @@ export class ArticleComponent implements OnInit,OnChanges {
    //  this.delete.emit(item);
   // }
   
-  constructor() { }
+  constructor(private datasvc: HeroService) { }
 
   ngOnInit() {
   }
 
-  ngOnChanges() {
-  
-    }
+ 
    
 }
