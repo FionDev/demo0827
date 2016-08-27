@@ -26,6 +26,10 @@ export class AppComponent {
     this.pkeyword = pkeyword;
   }
   
+   deleteArticle(item) {
+    let i = this.data.indexOf(item);
+    this.data.splice(i, 1);
+  }
   
   data: any[] = [
     {
