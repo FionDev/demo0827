@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input} from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: 'header.component.html',
   styleUrls: ['header.component.css']
 })
+
+
+
 export class HeaderComponent implements OnInit {
 
-  title="Angular 2 Test"
+  @Input()
+  title:string;
+  
   subtitle="記載著<strong> Will</strong> 在網路世界的學習心得與技術分享"
   subtitleCount="次數"
   count=0
