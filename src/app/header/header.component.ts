@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
  changeTitle(){
    this.title="Angular 2 Change Title"
  }
- 
+  showIcons = true;
  plusOne($event:MouseEvent){
     console.log($event);
     if($event.shiftKey){
@@ -27,10 +27,13 @@ export class HeaderComponent implements OnInit {
     }else{
       this.count=this.count-1;
     }
+    
+    this.showIcons = !this.showIcons;
   }
   
   getClass(){
     return {'red': (this.count % 2)==0};
   }
+
  
 }
