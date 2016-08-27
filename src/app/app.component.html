@@ -76,17 +76,27 @@
             <!-- Search START-->
             <div class="widget search">
               <div class="widget-content">
-                  <div id="searchbox">
+                <!-- Angular 2 資料繫結方法：雙向繫結 and 將搜尋框的 keyword 修改為「按下 Enter 鍵之後才會寫入 this.keyword 屬性」-->
+                <div id="searchbox">
                     <input type="text" 
                         [(ngModel)]="dkeyword"
                         [value]="keyword" (keyup)="doSearch($event)" 
                         placeholder="請輸入搜尋關鍵字" accesskey="s">
                     <input type="button" value="搜尋" id="searchbutton">
-                     {{dkeyword}}
-                     
+                     {{dkeyword}}                    
                     {{keyword}}
                    
                   </div>
+                  <!-- Angular 2 範本參考變數 -->
+                   <div id="searchbox">
+                        <input type="text" #keywordInput 
+                            [value]="pkeyword" 
+                            (keyup.enter)="doSearch2(keywordInput.value)" 
+                            (keyup.escape)="pkeyword=''" placeholder="請輸入搜尋關鍵字" accesskey="s">
+                        <input type="button" value="搜尋" id="searchbutton">
+                            {{pkeyword}}            
+                    </div>
+                                       
               </div>
             </div>
             <!-- Search END -->
