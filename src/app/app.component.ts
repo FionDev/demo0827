@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  
+  dkeyword='';
+  keyword='';
+
+  doSearch($event:KeyboardEvent){
+    let input = $event.target as HTMLInputElement;
+    if($event.keyCode==13)
+    {
+      this.keyword=input.value; 
+    }
+  }
 }
