@@ -9,6 +9,10 @@ export class ArticleComponent implements OnInit,OnChanges {
 
   @Input()
   item: any;
+  
+  @Input()
+  keyword:string;
+  
   //delete way2
   @Output() 
   delete=new EventEmitter<any>();
@@ -23,6 +27,8 @@ export class ArticleComponent implements OnInit,OnChanges {
   ngOnInit() {
   }
 
- 
+  ngOnChanges() {
+  
+    }
    
 }
