@@ -9,32 +9,14 @@ export class AppComponent {
   
   title = 'app works!';
 
-  dkeyword = '';
-  keyword = '';
-
-
-
-  doSearch($event: KeyboardEvent) {
-    let input = $event.target as HTMLInputElement;
-    if ($event.keyCode == 13) {
-      this.keyword = input.value;
+  doSearch(keyword: string) {
+      this.datasvc.keyword = keyword;
     }
-  }
 
-  pkeyword = '';
-  doSearch2(pkeyword: string) {
-    this.pkeyword = pkeyword;
-  }
   
-   deleteArticle(item) {
-    let i = this.data.indexOf(item);
-    this.data.splice(i, 1);
-  }
   
   constructor(private datasvc: HeroService) {
-      this.data = datasvc.data;
+     
     }
   
-  data:any[];
-
 }

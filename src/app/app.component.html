@@ -11,8 +11,7 @@
 
             <!-- Article START-->
             <!-- output-->
-           <app-article [keyword]="keyword" [item]="item" *ngFor="let item of data; let i = index"
-               (delete)="deleteArticle($event)"></app-article>
+           <app-article  [item]="item" *ngFor="let item of datasvc.data; let i = index"></app-article>
             <!-- Article END-->
 
           </div>
@@ -30,27 +29,25 @@
                 <div id="searchbox">
                     <input type="text" 
                         [(ngModel)]="dkeyword"
-                        [value]="keyword" (keyup)="doSearch($event)" 
+                        [value]="datasvc.keyword" (keyup)="doSearch($event)" 
                         placeholder="請輸入搜尋關鍵字" accesskey="s">
                     <input type="button" value="搜尋" id="searchbutton">
-                     {{dkeyword}}                    
-                    {{keyword}}
-                   
+                     {{datasvc.keyword}}
                   </div>
                   <!-- Angular 2 範本參考變數 -->
                    <div id="searchbox">
                         <input type="text" #keywordInput 
-                            [value]="pkeyword" 
-                            (keyup.enter)="doSearch2(keywordInput.value)" 
-                            (keyup.escape)="pkeyword=''" placeholder="請輸入搜尋關鍵字" accesskey="s">
+                            [value]="datasvc.keyword" 
+                            (keyup.enter)="doSearch(keywordInput.value)" 
+                            (keyup.escape)="datasvc.keyword=''" placeholder="請輸入搜尋關鍵字" accesskey="s">
                         <input type="button" value="搜尋" id="searchbutton">
-                            {{pkeyword}}            
+                            {{datasvc.keyword}}            
                     </div>
                                        
               </div>
             </div>
             <!-- Search END -->
-<div [ngSwitch]="keyword">
+<div [ngSwitch]="datasvc.keyword">
     <div *ngSwitchCase="'1'">
             <!-- Calendar START -->
                 <div class="widget calendar">
