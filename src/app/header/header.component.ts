@@ -29,6 +29,8 @@ export class HeaderComponent implements OnInit {
     }
   }
   
-  
+  getClass(){
+    return {'red': (this.count % 2)==0};
+  }
  
 }
