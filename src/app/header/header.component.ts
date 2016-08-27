@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
 
   title="Angular 2 Test"
   subtitle="記載著<strong> Will</strong> 在網路世界的學習心得與技術分享"
-  subtitleCount="記載著Will在網路世界的學習心得與技術分享"
+  subtitleCount="次數"
   count=0
   constructor() { }
 
@@ -28,5 +28,7 @@ export class HeaderComponent implements OnInit {
       this.count=this.count-1;
     }
   }
+  
+  
  
 }
